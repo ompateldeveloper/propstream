@@ -7,6 +7,7 @@ const Index = () => {
     return (
         <SafeAreaView>
             <Text>Hello World</Text>
+            okay
         </SafeAreaView>
     );
 };
