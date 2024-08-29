@@ -1,13 +1,15 @@
 import { View, Text, TouchableOpacity, Image, Pressable } from "react-native";
 import React from "react";
 import { Drawer } from "expo-router/drawer";
-import { Clock, Mail, Menu, Phone, X } from "lucide-react-native";
+import { Clock, Facebook, Mail, Menu, Phone, X } from "lucide-react-native";
 import ImageAssets from "../constants/ImageAssets";
 import { Link, useNavigation } from "expo-router";
 import { List } from "react-native-paper";
 import { Colors } from "../constants/Colors";
 import { ScrollView } from "react-native-gesture-handler";
-
+import AntDesign from "@expo/vector-icons/AntDesign";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 const Icon = (props) => {
     const navigation = useNavigation();
     return (
@@ -22,7 +24,11 @@ const Icon = (props) => {
     );
 };
 const Logo = () => {
-    return <Image source={ImageAssets.nav_logo} className="h-4 w-32" resizeMode="contain" />;
+    return (
+        <Link href='/'>
+            <Image source={ImageAssets.nav_logo} className="h-4 w-32" resizeMode="contain" />;
+        </Link>
+    );
 };
 const StyledLink = (props) => {
     return (
@@ -175,7 +181,29 @@ const DrawerContent = ({ navigation }) => {
                     <StyledLink href="https://www.facebook.com/groups/propstream.community" className="px-4 py-4 text-lg text-white">
                         Community
                     </StyledLink>
-                    <Text className="px-4 py-4 text-lg text-white"></Text>
+                    <View className="flex flex-row items-center justify-center m-2">
+                        <View className="flex flex-row items-center justify-between gap-2">
+                            <Link href="https://www.facebook.com/PropStreamData" className="p-1.5 bg-red-900/50 rounded-full">
+                                <AntDesign name="facebook-square" size={20} color="white" />
+                            </Link>
+                            <Link href="https://www.facebook.com/groups/propstream.community" className="p-1.5 bg-red-900/50 rounded-full">
+                                <FontAwesome6 name="x-twitter" size={20} color={"white"} />
+                            </Link>
+                            <Link href="https://www.facebook.com/groups/propstream.community" className="p-1.5 bg-red-900/50 rounded-full">
+                                <AntDesign name="linkedin-square" size={20} color={"white"} />
+                            </Link>
+                            <Link href="https://www.facebook.com/groups/propstream.community" className="p-1.5 bg-red-900/50 rounded-full">
+                                <AntDesign name="instagram" size={20} color="white" />
+                            </Link>
+                            <Link href="https://www.facebook.com/groups/propstream.community" className="p-1.5 bg-red-900/50 rounded-full">
+                                <AntDesign name="youtube" size={20} color="white" />
+                            </Link>
+                            <Link href="https://www.facebook.com/groups/propstream.community" className="p-1.5 bg-red-900/50 rounded-full">
+                                <FontAwesome5 name="tiktok" size={20} color="white" />
+                            </Link>
+                        </View>
+                    </View>
+                    <View className="bg-red-900/50 w-full h-1"></View>
                 </List.AccordionGroup>
             </ScrollView>
         </View>
